@@ -3,7 +3,7 @@ class CreateTeam < ActiveRecord::Migration
     create_table :teams do |t|
       t.string :name
       t.string :city
-      t.integer :ticketPrice
+      t.integer :ticket_price
 
       t.timestamps null: false
     end

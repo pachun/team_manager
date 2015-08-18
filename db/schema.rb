@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20150817233942) do
   create_table "teams", force: true do |t|
     t.string   "name"
     t.string   "city"
-    t.integer  "ticketPrice"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "ticket_price"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
