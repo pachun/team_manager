@@ -1,4 +1,6 @@
 class TeamsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
   def index
     render json: Team.all
   end
@@ -17,7 +19,7 @@ class TeamsController < ApplicationController
   end
 
   def update
-    team = Team.find(team_params["id"])
+    team = Team.find(params[:id])
     if team.update_attributes(team_params)
       render json: team, status: 200
     end
@@ -26,6 +28,6 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:id, :name, :city, :ticket_price)
+    params.require(:team).permit(:name, :city, :ticket_price)
   end
 end
