@@ -22,6 +22,8 @@ class TeamsController < ApplicationController
     team = Team.find(params[:id])
     if team.update_attributes(team_params)
       render json: team, status: 200
+    else
+      render json: team, status: :not_acceptable
     end
   end
 
